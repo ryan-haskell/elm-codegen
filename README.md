@@ -20,7 +20,7 @@ someone reached out to me recently about how i generated Elm code with Elm for [
 
 #### designing for the elm community?
 
-__Code generation is neat, but having a well-designed package is a better outcome! Elm folks can easily understand functions and data types over your custom library.
+__Code generation is neat, but having a well-designed package is a better outcome!__ Elm folks can easily understand functions and data types over your custom library.
 
 
 ### creating the elm project
@@ -35,7 +35,7 @@ elm init
 
 Those commands will create a new project in the `codegen` folder. 
 
-From there, we'll use [Platform.worker]() to create a "headless" elm app that doesn't render to the DOM with a `view` function.
+From there, we'll use [Platform.worker](https://package.elm-lang.org/packages/elm/core/latest/Platform#worker) to create a "headless" elm app that doesn't render to the DOM with a `view` function.
 
 We can do this by creating `src/Main.elm`:
 
@@ -85,7 +85,7 @@ update _ model =
 
 ```
 
-The way our `Platform.worker` will communicate with the outside world is with [ports](). These will allow us to send messages back and forth to NodeJS!
+The way our `Platform.worker` will communicate with the outside world is with [ports](https://guide.elm-lang.org/interop/ports.html). These will allow us to send messages back and forth to NodeJS!
 
 Let's create a `src/Ports.elm` file for that code
 
@@ -465,7 +465,7 @@ routes =
     ]
 ```
 
-If you'd like to see the actual implementation for [`Utils.Template` functions]() or things like [the `Route.toParser` function](), you can click those links.
+If you'd like to see the actual implementation for [`Utils.Template` functions](https://github.com/ryannhg/elm-codegen/blob/master/src/Utils/Template.elm) or things like [the `Route.toParser` function](https://github.com/ryannhg/elm-codegen/blob/f047407cc7c37d0eb1e55c6b79fd838e8e731c56/src/Route.elm#L40-L42), you can click those links.
 
 They're just functions that return `String` values, so I didn't want to get into them too much here!
 
